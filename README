@@ -1,0 +1,23 @@
+###########################Zenity Info Display Box###########################
+#Matt Mueller
+#7/31/2014
+#mlmuelle@mtu.edu
+
+#Install Direction
+# 1. Change the "INSTALL.sh" script permissons using chmod +x
+# 2. Edit "liinfo" for your server role
+# 3. Run "INSTALL.sh"
+# 4. Run "sys.info.sh" that appears on the desktop
+# 5. edit "liinfo" in /root/bin/backup to alter the appearence of the zenity box
+# 6. edit "sys.info.sh" for window size and timeout
+#
+#
+#
+#What Scripts do
+#liinfo
+# - Runs multiple commands to grab all info wanted and then puts it into the file 'sys.info'
+#sys.info.sh
+# - Runs the 'liinfo' script to make sure it is updated, then runs a zenity script to show the contents of 'sys.info'
+#
+#If you get a Gtk warning then run "$DISPLAY" in terminal, then it should give a number like '1.0' take that number and instert it into 'sys.info.sh' "--display= "
+
