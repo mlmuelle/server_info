@@ -3,7 +3,7 @@
 #
 #Purpose: Display Info on a zenity box for SUSE Enterprise Linux 11 SP2 (should work with any distro with zenity installed)
  
-SCHOME=/root/bin/backup
+SCHOME=/put/folder/here
 BGFILE=$SCHOME/sys.info
 
 > $BGFILE
@@ -13,7 +13,7 @@ BGFILE=$SCHOME/sys.info
  A_HOSTNAME="                   Host Name : "
  A_USERNAME="                   User Name : "
    A_NUMCPU="                  Num of CPU : "
- #A_CPUMODEL="                   CPU Model : "
+ A_CPUMODEL="                   CPU Model : "  
  A_MEMTOTAL="                Total Memory : "
 A_OSVERSION="                  OS Version : "
 A_IPADDRESS="                  IP Address : "
@@ -26,7 +26,7 @@ B_UPTIME=`procinfo | grep uptime | awk '{print $2}'`
 B_HOSTNAME=`hostname`
 B_USERNAME=`whoami`
 B_NUMCPU=`cat /proc/cpuinfo | grep processor | wc -l`
-#B_CPUMODEL=`cat /proc/cpuinfo | grep "model name" | awk -F":" '{print $2}' | head -1 | sed -e 's/^ *//'`
+B_CPUMODEL=`cat /proc/cpuinfo | grep "model name" | awk -F":" '{print $2}' | head -1 | sed -e 's/^ *//'`
 B_MEMTOTAL=`cat /proc/meminfo | grep MemTotal | sed -e 's/^ *//' | awk -F":" '{print $2/1000"MB"}'`
 B_OSVERSION=`uname -srm`
 B_IPADDRESS=`/sbin/ifconfig | grep "inet addr" | grep -v 127.0.0.1 | awk '{print $2}' | awk -F":" '{print $2}'` 
@@ -42,7 +42,7 @@ echo "$A_OSVERSION" $B_OSVERSION >> $BGFILE
 echo "$A_IPADDRESS" $B_IPADDRESS >> $BGFILE
 echo "$A_NUMCPU" $B_NUMCPU >> $BGFILE
 echo "$A_DNSSERVER" $B_DNSSERVER >> $BGFILE
-#echo "$A_CPUMODEL" $B_CPUMODEL >> $BGFILE
+echo "$A_CPUMODEL" $B_CPUMODEL >> $BGFILE
 echo "$A_MEMTOTAL" $B_MEMTOTAL >> $BGFILE
 echo "$A_GATEWAY" $B_GATEWAY >> $BGFILE
 echo "$A_FREEDISK " $B_FREEDISK>> $BGFILE
