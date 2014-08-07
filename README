@@ -19,5 +19,14 @@
 #sys.info.sh
 # - Runs the 'liinfo' script to make sure it is updated, then runs a zenity script to show the contents of 'sys.info'
 #
-#If you get a Gtk warning then run "$DISPLAY" in terminal, then it should give a number like '1.0' take that number and instert it into 'sys.info.sh' "--display= "
+#If you get a Gtk warning then run "$DISPLAY" in terminal, then it should give a number like '1.0' take that number and 
+#instert it into 'sys.info.sh' "--display= "
+#
+#
+#
+#To display image on background
+#download ImageMagick-devel
+#Install ImageMagick
+#run convert in your folder with sys.info and the images you want to use as your background
+
 
